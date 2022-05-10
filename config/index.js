@@ -10,17 +10,26 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // 配置跨域
+      '/api':{  // '/api'是代理标识，一般是每个接口前的相同部分
+        target:'http://localhost:8095', // 请求地址，一般是服务器地址
+        changeOrigin:true, // 允许跨域
+        pathRewrite:{
+          '^/api' : '' // pathRewrite的作用是把请求接口中的 '/api'替换掉，一般是替换为空""
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

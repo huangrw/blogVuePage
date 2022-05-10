@@ -4,12 +4,12 @@
       <h1 class="title">Login</h1>
       <el-form :model="userForm">
         <el-form-item>
-          <el-input prefix-icon="el-icon-user" v-model="userForm.userName" placeholder="用户名" ></el-input>
+          <el-input prefix-icon="el-icon-user" v-model="userForm.username" placeholder="用户名" ></el-input>
         </el-form-item>
         <el-form-item>
           <el-input prefix-icon="el-icon-lock" v-model="userForm.password" placeholder="密码" show-password></el-input>
         </el-form-item>
-        <el-form-item><el-button type="primary" size="medium" round>登录</el-button></el-form-item>
+        <el-form-item><el-button type="primary" size="medium" round @click="userLogin">登录</el-button></el-form-item>
       </el-form>
     </div>
   </div>
@@ -22,10 +22,20 @@ name: "Login",
 data(){
   return{
     userForm:{
-      userName: "",
-      password: ""
+      username: "rongwei",
+      password: "qwe!2345"
     }
   }
+},
+methods:{
+  userLogin(){
+    this.$http.post('/user/login',this.userForm).then(res =>{
+      console.log(this.userForm)
+      console.log(res)
+    })
+
+  },
+
 }
 }
 </script>
