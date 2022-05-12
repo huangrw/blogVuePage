@@ -31,7 +31,19 @@ methods:{
   userLogin(){
     this.$http.post('/user/login',this.userForm).then(res =>{
       console.log(this.userForm)
-      console.log(res)
+      console.log(res.data)
+      console.log(res.data.meta.code)
+      if(res.data.meta.code === 200){
+        this.$router.push('/blogList')
+      }else {
+        this.$message({
+          showClose: true,
+          message: '用户名或密码错误请重新输入',
+          type: 'error',
+          center: true,
+        })
+
+      }
     })
 
   },

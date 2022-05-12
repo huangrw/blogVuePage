@@ -4,7 +4,7 @@
     <el-form class="form" inline="true">
       <el-row  :gutter="20">
         <el-col :span="6">
-          <el-form-item label="关键词" style="float:left;margin-left: 20px">
+          <el-form-item label="关键词" style="float:left;margin-left: 20px;">
             <el-input placeholder="关键词" ></el-input>
           </el-form-item>
         </el-col>
@@ -35,7 +35,7 @@
         <el-col :span="6">
           <el-button type="primary">查询</el-button>
           <el-button>重置</el-button>
-          <el-button type="success">新增</el-button>
+          <el-button type="success" @click="addBlog()">新增</el-button>
         </el-col>
       </el-row>
     </el-form>
@@ -130,6 +130,9 @@ export default {
     handleDelete(index, row) {
       console.log(index, row);
     },
+    addBlog(){
+      this.$router.push('/blogEdit')
+    }
 
 
 

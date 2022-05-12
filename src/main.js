@@ -8,6 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/global.css'
 import axios from "axios";
 import VueAxios from "vue-axios";
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 Vue.config.productionTip = false
 
@@ -15,6 +17,7 @@ axios.defaults.baseURL= '/api'
 
 Vue.use(ElementUI);
 Vue.use(VueAxios,axios)
+Vue.use(mavonEditor)
 
 /* eslint-disable no-new */
 new Vue({

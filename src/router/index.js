@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from "../components/admin/Login";
 import blogFrame from "../components/BlogFrame";
-import blogIInofDetail from "../components/admin/BlogIInofDetail";
+import BlogList from "../components/admin/BlogList";
+import BlogEdit from "../components/admin/BlogEdit";
 Vue.use(Router)
 
 export default new Router({
@@ -15,7 +16,8 @@ export default new Router({
       path:"/admin/blogInfos",
       component:blogFrame,
       children: [
-        {path: '/bolgInfoDeatil',component: blogIInofDetail}
+        {path: '/blogList',component: BlogList},
+        {path: '/blogEdit',component: BlogEdit},
       ]
     }
   ]

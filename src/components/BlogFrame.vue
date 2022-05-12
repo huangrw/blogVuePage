@@ -12,7 +12,7 @@
             active-text-color="#ffd04b">
             <el-menu-item><i class="el-icon-data-line"></i> 仪表盘</el-menu-item>
             <el-menu-item><i class="el-icon-view"></i>所有文章</el-menu-item>
-            <el-menu-item><i class="el-icon-edit"></i>写文章</el-menu-item>
+            <el-menu-item @click="addBlog"><i class="el-icon-edit"></i>写文章</el-menu-item>
             <el-menu-item><i class="el-icon-copy-document"></i>分类</el-menu-item>
             <el-menu-item><i class="el-icon-collection-tag"></i> 标签</el-menu-item>
             <el-menu-item><i class="el-icon-money"></i>归档</el-menu-item>
@@ -46,7 +46,17 @@
 
 <script>
 export default {
-  name: "BlogFrame"
+  name: "BlogFrame",
+  data(){
+    return{
+
+    }
+  },
+  methods: {
+    addBlog(){
+      this.$router.push('/blogEdit')
+    }
+  }
 }
 </script>
 
