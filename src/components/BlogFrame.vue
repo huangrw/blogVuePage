@@ -24,7 +24,7 @@
 
 
             <el-dropdown class="avatar">
-              <el-avatar  shape="square" :size="large"  icon="el-icon-user"></el-avatar>
+              <el-avatar  shape="square"   icon="el-icon-user"></el-avatar>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>个人资料</el-dropdown-item>
                 <el-dropdown-item>退出登录</el-dropdown-item>
@@ -37,8 +37,8 @@
       <el-main class="header">
         <router-view></router-view>
       </el-main>
-      <el-footer>
-
+      <el-footer class="el-footer">
+        <h5 class="footer">Proudly power by rongweiH</h5>
       </el-footer>
     </el-container>
   </div>
@@ -55,7 +55,14 @@ export default {
   methods: {
     addBlog(){
       this.$router.push('/blogEdit')
-    }
+    },
+    activeIndex2(){
+
+    },
+    handleSelect(){
+
+    },
+
   }
 }
 </script>
@@ -63,8 +70,7 @@ export default {
 <style scoped>
 .blogFrame{
   height: 100%;
-  overflow: hidden;
-  background-image: url("../assets/picture/wallpaper.jpg");
+  /*background-image: url("../assets/picture/wallpaper.jpg");*/
   background-size: cover;
   background-attachment: fixed;
 }
@@ -87,6 +93,9 @@ export default {
   position: absolute;
   right: 150px;
   top: 10px;
+}
+.el-footer{
+  text-align: center;
 }
 
 
